@@ -9,6 +9,27 @@
 <body>
     <main>
         <h1>Conversor de Moedas</h1>
+
+    
+      
+<form action="card.php" method="get">
+
+    <label for="valor">Quantos R$ você tem na carteira?</label>
+    <input type="number" name="valor" required placeholder="R$" >
+   
+    <select name="moeda" id="moeda">
+        <option value="dolar" <?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'dolar') echo 'selected'; ?>>Dolar</option>
+        <option value="euros"<?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'euros') echo 'selected'; ?>>Euro</option>
+        <option value="libras"<?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'libras') echo 'selected'; ?>>Libra</option>
+        <option value="lenes" <?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'lenes') echo 'selected'; ?>>Lene</option>
+        <option value="francos"<?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'francos') echo 'selected'; ?>>Franco</option>
+        <option value="pesos"<?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'pesos') echo 'selected'; ?>>Peso</option>
+        <option value="rublos" <?php if (isset($_GET['moeda']) && $_GET['moeda'] == 'rublos') echo 'selected'; ?>>Rublo</option> 
+    </select>
+    <input type="submit" value="Converter">
+
+</form>
+
 <?php 
 
 $inicio=date("m-d-Y", strtotime("-7 days"));
@@ -67,7 +88,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 ?>
 
 <br />
-<button onclick="javascript:window.location.href='index.html'">&#11013; Voltar</button>
 
 
     </main>
