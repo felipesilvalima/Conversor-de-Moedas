@@ -12,7 +12,7 @@
 
     
       
-<form action="card.php" method="get">
+<form action="" method="get">
 
     <label for="valor">Quantos R$ você tem na carteira?</label>
     <input type="number" name="valor" required placeholder="R$" >
