@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="styles3.css">
+    <script>
+        // Código JavaScript para manter a seleção persistente
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectElement = document.getElementById('moeda');
+
+            // Recuperar o valor armazenado no localStorage
+            const savedValue = localStorage.getItem('selectedCurrency');
+
+            if (savedValue) {
+                // Se houver um valor armazenado, selecione a opção correspondente
+                selectElement.value = savedValue;
+            }
+
+            // Adicionar um listener para salvar a opção selecionada
+            selectElement.addEventListener('change', function() {
+                localStorage.setItem('selectedCurrency', selectElement.value);
+            });
+        });
+    </script>
+</head>
+<body>
+   
+      
+<main>
+        <h1>
+    Conversor de Moedas  
+        </h1>
+      
+<form action="card.php" method="get">
+
+    <label for="valor">Quantos R$ você tem na carteira?</label>
+    <input type="number" name="valor" required placeholder="R$" >
+   
+    <select name="moeda" id="moeda">
+        <option value="dolar">Dolar</option>
+        <option value="euros">Euro</option>
+        <option value="libras">Libra</option>
+        <option value="lenes">Lene</option>
+        <option value="francos">Franco</option>
+        <option value="pesos">Peso</option>
+        <option value="rublos">Rublo</option>
+    </select>
+    <input type="submit" value="Converter">
+
+</form>
+
+
+    
+</main>
+    
+</body>
+</html>
